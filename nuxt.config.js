@@ -4,6 +4,10 @@ export default {
   /*
   ** Headers of the page
   */
+  env: {
+    campaignid: 'd4f2f638-5581-423a-8888-433617fbc155',
+    sitename: 'Wedding Inspiration',
+  },
   head: {
     title: process.env.npm_package_name || '',
     meta: [

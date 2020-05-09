@@ -26,7 +26,7 @@ export default {
         }
     },
     async created() {
-	    this.sitename = location.hostname;
+	    this.sitename = process.env.sitename;
    }
 }
 </script>

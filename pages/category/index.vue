@@ -30,7 +30,7 @@ export default {
       }
 
       try {
-          const res = await axios.get('https://power.vpnlabs.xyz/api/v1/campaign/d4f2f638-5581-423a-8888-433617fbc155/category/wallpaper', config);
+          const res = await axios.get('https://power.vpnlabs.xyz/api/v1/campaign/'+ process.env.campaignid +'/category/wallpaper', config);
           this.catlists = res.data;
           console.log(res.data);
       } catch (error) {
