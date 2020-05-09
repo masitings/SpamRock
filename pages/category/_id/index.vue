@@ -34,13 +34,17 @@ export default {
 
         try {
             const res = await axios.get(`https://power.vpnlabs.xyz/api/v1/keyword/${this.$route.params.id}`, config);
-            this.contents = res.data.data;
-            this.title = res.data.category.name;
-            this.metacom = res.data.meta.comma;
-            this.metadot = res.data.meta.dot;
-            console.log(res.data);
+            if (res.data.status == 404) {
+              location.href = '/404-not-found';
+            } else {
+              this.contents = res.data.data;
+              this.title = res.data.category.name;
+              this.metacom = res.data.meta.comma;
+              this.metadot = res.data.meta.dot;
+            }
+            
         } catch (error) {
-            console.log(error);
+            location.href = '/404-not-found';
         }
     },
     head() {

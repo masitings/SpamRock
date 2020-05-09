@@ -33,12 +33,16 @@ export default {
       }
       try {
           const res = await axios.get('https://power.vpnlabs.xyz/api/v1/campaign/'+ process.env.campaignid +'/wallpaper/keyword/100/done', config);
-          this.contents = res.data.keyword;
-          this.title = res.data.meta.dot;
-          this.keyword = res.data.meta.comma;
-          this.sitename = process.env.sitename;
+          if (res.data.status == 404) {
+            location.href = '/404-not-found';
+          } else {
+            this.contents = res.data.keyword;
+            this.title = res.data.meta.dot;
+            this.keyword = res.data.meta.comma;
+            this.sitename = process.env.sitename;
+          }
       } catch (error) {
-          console.log(error);
+          location.href = '/404-not-found';
       }
   },
   head() {

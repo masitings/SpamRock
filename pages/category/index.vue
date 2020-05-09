@@ -32,12 +32,12 @@ export default {
       try {
           const res = await axios.get('https://power.vpnlabs.xyz/api/v1/campaign/'+ process.env.campaignid +'/category/wallpaper', config);
           if (res.data.status == 404) {
-            location.href ='/';
+            location.href = '/404-not-found';
           } else {
             this.catlists = res.data.data;
           }
       } catch (error) {
-          console.log(error);
+          location.href = '/404-not-found';
       }
   }
 }

@@ -53,7 +53,7 @@ export default {
         try {
             const res = await axios.get(`https://power.vpnlabs.xyz/api/v1/wallpaper/get/${this.$route.params.id}/${this.$route.params.slug}`, config);
             if (res.data.status == 404) {
-              location.href = '/';
+              location.href = '/404-not-found';
             } else {
               this.keyword = res.data.keyword;
               this.featured = res.data.featured;
@@ -61,9 +61,8 @@ export default {
               this.metadot = res.data.meta.dot;
               this.metacom = res.data.meta.comma;
             }
-            
         } catch (error) {
-            console.log(error);
+            location.href = '/404-not-found';
         }
         
         try {
