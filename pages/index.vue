@@ -2,9 +2,8 @@
   <b-container class="bv-example-row conts">
     <b-row>
       <b-col class="mb-4" md="12">
-        <h3>Welcome to Home Design Ideas</h3>
+        <h3>Welcome to {{sitename}}</h3>
       </b-col>
-
       <ContentIndex v-for="content in contents" :key="content.slug" :slug="content.slug" :uuid="content.cat_id" :content="content.keyword" />
     </b-row>
   </b-container>
@@ -22,7 +21,8 @@ export default {
     return {
       contents: [],
       title: '',
-      keyword: ''
+      keyword: '',
+      sitename: ''
     }
   },
   async created() {
@@ -36,7 +36,7 @@ export default {
           this.contents = res.data.keyword;
           this.title = res.data.meta.dot;
           this.keyword = res.data.meta.comma;
-          console.log(res.data);
+          this.sitename = location.hostname;
       } catch (error) {
           console.log(error);
       }
