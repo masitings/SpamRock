@@ -31,8 +31,11 @@ export default {
 
       try {
           const res = await axios.get('https://power.vpnlabs.xyz/api/v1/campaign/'+ process.env.campaignid +'/category/wallpaper', config);
-          this.catlists = res.data;
-          console.log(res.data);
+          if (res.data.status == 404) {
+            location.href ='/';
+          } else {
+            this.catlists = res.data.data;
+          }
       } catch (error) {
           console.log(error);
       }
