@@ -1,7 +1,7 @@
 <template>
     <b-navbar toggleable="lg" fixed="top" type="dark" variant="secondary">
         <b-container>
-            <b-navbar-brand href="/">Home Design Platform</b-navbar-brand>
+            <nuxt-link :to="'/'" class="navbar-brand">{{sitename}}</nuxt-link>
             <b-navbar-toggle target="nav_collapse" />
             <b-collapse is-nav id="nav_collapse">
                 <b-navbar-nav>
@@ -19,10 +19,20 @@
 
 <script>
 export default {
-    name: 'AppHeader'
+    name: 'AppHeader',
+    data(){
+        return {
+            sitename: '',
+        }
+    },
+    async created() {
+	    this.sitename = location.hostname;
+   }
 }
 </script>
 
 <style>
-
+    .navbar-brand {
+        text-transform: capitalize;
+    }
 </style>
