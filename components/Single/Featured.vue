@@ -1,7 +1,7 @@
 <template>
     <div class="featured">
         <h1>{{keyword}}</h1>
-        <b-img-lazy :src="src" blank-src="/loader.gif" fluid :alt="name" :title="keyword" onerror="this.onerror=null;this.src='/blank.png';" />
+        <b-img-lazy :src="src" blank-src="/loader.gif" fluid :alt="name" id="featuredClass" :title="keyword" onerror="this.onerror=null;this.src='/blank.png';" />
         <h2>{{name}}</h2>
         <p>{{paragraph}}</p>
     </div>
