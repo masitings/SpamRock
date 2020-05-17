@@ -77,6 +77,21 @@ export default {
             title: this.keyword + ' - ' + this.metadot,
             meta: [
                 {
+                  hid: 'robots',
+                  name: 'robots',
+                  content: 'all, index, follow'
+                },
+                {
+                  hid: 'googlebot',
+                  name: 'googlebot',
+                  content: 'index, follow, imageindex'
+                },
+                {
+                  hid: 'googlebot-image',
+                  name: 'googlebot-image',
+                  content: 'index, follow'
+                },
+                {
                     hid: 'description',
                     name: 'description',
                     content: this.metadot
@@ -88,7 +103,7 @@ export default {
                 }
             ]
         }
-  }
+    }
 }
 </script>
 <style>

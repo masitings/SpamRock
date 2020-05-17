@@ -50,6 +50,11 @@ export default {
             title: this.title,
             meta: [
                 {
+                  hid: 'robots',
+                  name: 'robots',
+                  content: 'index, follow'
+                },
+                {
                     hid: 'description',
                     name: 'description',
                     content: this.title

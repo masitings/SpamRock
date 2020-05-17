@@ -52,6 +52,11 @@ export default {
             title: this.title + ' - ' + this.metadot ,
             meta: [
                 {
+                  hid: 'robots',
+                  name: 'robots',
+                  content: 'all, index, follow'
+                },
+                {
                     hid: 'description',
                     name: 'description',
                     content: this.metadot

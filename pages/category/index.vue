@@ -39,7 +39,24 @@ export default {
       } catch (error) {
           location.href = '/404-not-found';
       }
-  }
+  },
+  head() {
+        return {
+            title: 'Category Collection',
+            meta: [
+                {
+                  hid: 'robots',
+                  name: 'robots',
+                  content: 'all, index, follow'
+                },
+                {
+                  hid: 'googlebot',
+                  name: 'googlebot',
+                  content: 'index, follow, imageindex'
+                }
+            ]
+        }
+    }
 }
 </script>
 <style>
